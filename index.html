@@ -15,9 +15,10 @@
     </div>
     <div class="header-tools">
       <div class="clock"><b id="dateNow"></b><span id="timeNow"></span></div>
-      <span class="connection"><i></i> Conectado</span>
+      <span class="connection local" id="connectionStatus"><i></i> Base local</span>
+      <button class="btn btn-outline" id="sessionBtn">Iniciar sesión</button>
       <button class="btn btn-outline" id="refreshBtn">Actualizar</button>
-      <label class="btn btn-primary" for="excelInput">Cargar Excel</label>
+      <label class="btn btn-primary" id="uploadLabel" for="excelInput">Cargar Excel</label>
       <input id="excelInput" type="file" accept=".xlsx,.xls" hidden>
     </div>
   </header>
@@ -129,8 +130,23 @@
   <img class="watermark" src="assets/logo-vallejo-properties.png" alt="">
   <div id="toast" class="toast" role="status"></div>
   <div id="chartTooltip" class="chart-tooltip"></div>
+  <div id="loginModal" class="auth-modal" hidden>
+    <form id="loginForm" class="auth-card">
+      <button type="button" class="auth-close" id="closeLogin" aria-label="Cerrar">×</button>
+      <span>ACCESO SEGURO</span>
+      <h2>Conectar con Supabase</h2>
+      <p>Ingresa con la cuenta autorizada para consultar y cargar el Excel compartido.</p>
+      <label>Correo electrónico<input id="loginEmail" type="email" value="mariapropierties@gmail.com" autocomplete="username" required></label>
+      <label>Contraseña<input id="loginPassword" type="password" autocomplete="current-password" required></label>
+      <p id="loginError" class="auth-error" role="alert"></p>
+      <button class="btn btn-primary auth-submit" type="submit">Entrar</button>
+      <button class="btn btn-outline auth-submit" id="createAccount" type="button">Crear primer acceso</button>
+      <small>El acceso se administra desde Supabase. Este dashboard no permite registros públicos.</small>
+    </form>
+  </div>
   <script src="vendor/xlsx.full.min.js"></script>
   <script src="data/default-data.js"></script>
+  <script src="supabase-config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
