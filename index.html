@@ -16,7 +16,7 @@
     <div class="header-tools">
       <div class="clock"><b id="dateNow"></b><span id="timeNow"></span></div>
       <span class="connection local" id="connectionStatus"><i></i> Base local</span>
-      <button class="btn btn-outline" id="sessionBtn">Iniciar sesión</button>
+      <button class="btn btn-outline" id="sessionBtn">Acceso para cargar</button>
       <button class="btn btn-outline" id="refreshBtn">Actualizar</button>
       <label class="btn btn-primary" id="uploadLabel" for="excelInput">Cargar Excel</label>
       <input id="excelInput" type="file" accept=".xlsx,.xls" hidden>
@@ -134,19 +134,17 @@
     <form id="loginForm" class="auth-card">
       <button type="button" class="auth-close" id="closeLogin" aria-label="Cerrar">×</button>
       <span>ACCESO SEGURO</span>
-      <h2>Conectar con Supabase</h2>
-      <p>Ingresa con la cuenta autorizada para consultar y cargar el Excel compartido.</p>
-      <label>Correo electrónico<input id="loginEmail" type="email" value="mariapropierties@gmail.com" autocomplete="username" required></label>
-      <label>Contraseña<input id="loginPassword" type="password" autocomplete="current-password" required></label>
+      <h2>Ingresar código de carga</h2>
+      <p>Escribe el código autorizado para habilitar la carga del Excel compartido.</p>
+      <label>Código de carga<input id="accessCode" type="password" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="one-time-code" placeholder="••••••" required></label>
       <p id="loginError" class="auth-error" role="alert"></p>
-      <button class="btn btn-primary auth-submit" type="submit">Entrar</button>
-      <button class="btn btn-outline auth-submit" id="createAccount" type="button">Crear primer acceso</button>
-      <small>El acceso se administra desde Supabase. Este dashboard no permite registros públicos.</small>
+      <button class="btn btn-primary auth-submit" type="submit">Validar código</button>
+      <small>El código solo habilita la función para cargar y actualizar el archivo.</small>
     </form>
   </div>
   <script src="vendor/xlsx.full.min.js"></script>
   <script src="data/default-data.js"></script>
   <script src="supabase-config.js"></script>
-  <script src="app.js?v=20260818-data-normalization-2"></script>
+  <script src="app.js?v=20260924-metricas-unificadas"></script>
 </body>
 </html>
