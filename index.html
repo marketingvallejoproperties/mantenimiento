@@ -16,7 +16,6 @@
     <div class="header-tools">
       <div class="clock"><b id="dateNow"></b><span id="timeNow"></span></div>
       <span class="connection local" id="connectionStatus"><i></i> Base local</span>
-      <button class="btn btn-outline" id="sessionBtn">Acceso para cargar</button>
       <button class="btn btn-outline" id="refreshBtn">Actualizar</button>
       <label class="btn btn-primary" id="uploadLabel" for="excelInput">Cargar Excel</label>
       <input id="excelInput" type="file" accept=".xlsx,.xls" hidden>
@@ -130,21 +129,9 @@
   <img class="watermark" src="assets/logo-vallejo-properties.png" alt="">
   <div id="toast" class="toast" role="status"></div>
   <div id="chartTooltip" class="chart-tooltip"></div>
-  <div id="loginModal" class="auth-modal" hidden>
-    <form id="loginForm" class="auth-card">
-      <button type="button" class="auth-close" id="closeLogin" aria-label="Cerrar">×</button>
-      <span>ACCESO SEGURO</span>
-      <h2>Ingresar código de carga</h2>
-      <p>Escribe el código autorizado para habilitar la carga del Excel compartido.</p>
-      <label>Código de carga<input id="accessCode" type="password" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="one-time-code" placeholder="••••••" required></label>
-      <p id="loginError" class="auth-error" role="alert"></p>
-      <button class="btn btn-primary auth-submit" type="submit">Validar código</button>
-      <small>El código solo habilita la función para cargar y actualizar el archivo.</small>
-    </form>
-  </div>
   <script src="vendor/xlsx.full.min.js"></script>
   <script src="data/default-data.js"></script>
   <script src="supabase-config.js"></script>
-  <script src="app.js?v=20260924-metricas-unificadas"></script>
+  <script src="app.js?v=20261015-carga-sin-codigo"></script>
 </body>
 </html>
